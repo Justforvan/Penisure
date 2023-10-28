@@ -1,8 +1,33 @@
-import 'package:flutter/material.dart';
-import 'package:accordion/accordion.dart';
+import 'dart:convert';
 
-class FaQPage extends StatelessWidget {
-  const FaQPage({super.key});
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:accordion/accordion.dart';
+import 'package:penisure/data/faq_data.dart';
+
+class FaQPage extends StatefulWidget {
+  const FaQPage({Key? key}) : super(key: key);
+
+  @override
+  _FaQPageState createState() => _FaQPageState();
+}
+
+class _FaQPageState extends State<FaQPage> {
+  late Assets faqData;
+
+  @override
+  void initState() {
+    super.initState();
+    loadFaqData();
+  }
+
+  Future<void> loadFaqData() async {
+    final String faqDataJson = await rootBundle.loadString('assets/faq_data.json');
+    final decodedData = json.decode(faqDataJson);
+    setState(() {
+      faqData = Assets.fromJson(decodedData);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,59 +48,24 @@ class FaQPage extends StatelessWidget {
                   style: TextStyle(fontSize: 18),
                 ),
               ),
-              Accordion(
-                scaleWhenAnimating: false,
-                children: [
-                  AccordionSection(
-                    header: const Text('Is my penis size smaller than normal?',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    headerBorderRadius: 4,
-                    headerPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    headerBackgroundColor: Colors.blue[900],
-                    content: const Text(
-                        'Lokasi adalah fitur yang dapat membantu anda mencari lokasi ATM terdekat.'),
-                    contentBorderRadius: 4,
-                  ),
-                  AccordionSection(
-                    header: const Text('Apa itu Lokasi?',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    headerBorderRadius: 4,
-                    headerPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    headerBackgroundColor: Colors.blue[900],
-                    content: const Text(
-                        'Lokasi adalah fitur yang dapat membantu anda mencari lokasi ATM terdekat.'),
-                    contentBorderRadius: 4,
-                  ),
-                  AccordionSection(
-                    header: const Text('Apa itu Lokasi?',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    headerBorderRadius: 4,
-                    headerPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    headerBackgroundColor: Colors.blue[900],
-                    content: const Text(
-                        'Lokasi adalah fitur yang dapat membantu anda mencari lokasi ATM terdekat.'),
-                    contentBorderRadius: 4,
-                  ),
-                  AccordionSection(
-                    header: const Text('Apa itu Lokasi?',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    headerBorderRadius: 4,
-                    headerPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    headerBackgroundColor: Colors.blue[900],
-                    content: const Text(
-                        'Lokasi adalah fitur yang dapat membantu anda mencari lokasi ATM terdekat.'),
-                    contentBorderRadius: 4,
-                  ),
-                ],
-              ),
+              if (faqData != null)
+                Accordion(
+                  scaleWhenAnimating: false,
+                  children: [
+                    AccordionSection(
+                      header: Text(faqData.questions.q1,
+                          style: const TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold)),
+                      headerBorderRadius: 4,
+                      headerPadding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      headerBackgroundColor: Colors.blue[900],
+                      content: Text(faqData.answers.a1),
+                      contentBorderRadius: 4,
+                    ),
+                    // Repeat for other sections
+                  ],
+                ),
             ],
           ),
         ),
