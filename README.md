@@ -1,4 +1,4 @@
-# penisure
+# Penisure
 
 An app to screen for erectile disfunction and look at facts about the penis.
 
