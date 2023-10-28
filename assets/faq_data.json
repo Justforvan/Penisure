@@ -1,20 +1,21 @@
 {
-    "questions": {
-      "q1": "",
-      "q2": "",
-      "q3": "",
-      "q4": "",
-      "q5": " ",
-      "q6": "",
-      "q7": "",
-      "q8": "",
-      "q9": "",
-      "q10": " ",
-      "q11": "",
-      "q12": "",
-      "q13": ""
-    },
-  "answers": { "a1": "A condition known as micropenis may be a sign of genital association or a hormonal deficit. \nA penis that is shorter than 9.3 cm in an adult is referred to as a micropenis.\nThis is measured with the penis shaft totally stretched, measured from the tip of the glans (with the foreskin as far back as possible) to the pubic symphysis (after pressing the suprapubic fat).",
+  "questions": {
+    "q1": "Is my penis size smaller than normal?",
+    "q2": "Is it normal to masturbate?",
+    "q3": "Myth or Fact: Foreplay is not required when you have big penis ",
+    "q4": "Is a curved penis normal?",
+    "q5": "Is penis enlargement products really work?",
+    "q6": "Can my penis break?",
+    "q7": "Can cigarette smoking make me impotent?",
+    "q8": "How to deal with random erection?",
+    "q9": "Does alcohol affect my sexual performance?",
+    "q10": "Does a man's fertility be affected by frequent masturbation?",
+    "q11": "What elements play a role in male infertility?",
+    "q12": "How to choose the right condom?",
+    "q13": "How is the epidemiology of erectile dysfunction?"
+  },
+  "answers": {
+    "a1": "A condition known as micropenis may be a sign of genital association or a hormonal deficit. \nA penis that is shorter than 9.3 cm in an adult is referred to as a micropenis.\nThis is measured with the penis shaft totally stretched, measured from the tip of the glans (with the foreskin as far back as possible) to the pubic symphysis (after pressing the suprapubic fat).",
     "a2": "It is normal to masturbate, and it is essential to the development of healthy sexuality. However, frequent masturbation in a brief period of time may cause your penis to slightly swell. Talk therapy can be something to think about if the conduct turns into a compulsive one and interferes with your day-to-day activities.",
     "a3": "It is a myth. Sex can become exciting through foreplay. To make sex even more enjoyable, kissing can release hormones that help people relax and let go of their worries while with their partners. In addition to raising heart rate and lubricating the body, foreplay makes sex more enjoyable.",
     "a4": "It is natural to have some curvature to your penis when you have an erection. However, if it is uncomfortable or painful for you or your partner, particularly during sex or when masturbating, those could be symptoms of a more serious illness. Peyronie's disease is one of the types of penile curvature because scar tissue in your penis causes it to bend, curve, or lose length or girth",
@@ -29,4 +30,3 @@
     "a13": "According to the best available data, erectile dysfunction affects 52% of men in the US between the ages of 40 and 70. At least 150 million men worldwide and between 30 and 50 million men in the US are thought to suffer from erectile dysfunction. However, dueto reporting bias, cultural differences, a general lack of inquiry by many doctors regarding the sexual health of their male patients, and embarrassment issues, these values are probably a severe underestimate of the true number of men with erectile dysfunction."
   }
 }
-
