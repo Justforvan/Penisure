@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             const Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text(
-                                'How was your erection today?',
+                                'How\'s your erection today?',
                                 style: TextStyle(fontSize: 14, color: Colors.white),
                               ),
                             ),
