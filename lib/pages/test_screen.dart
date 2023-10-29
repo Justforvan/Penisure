@@ -1,8 +1,13 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:penisure/pages/test_score.dart';
 
+void main() {
+  runApp(const MaterialApp(
+    home: TestScreen(),
+  ));
+}
 
 class TestScreen extends StatefulWidget {
   const TestScreen({Key? key}) : super(key: key);
@@ -12,8 +17,22 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
-  int testScore = 0;
   Map<String, dynamic>? testData;
+  List<int> ehsScores = List.filled(5, 0);
+  List<int> iiefScores = List.filled(5, 0);
+
+  void calculateTotalScore() {
+    int ehsTotalScore = ehsScores.fold(0, (prev, score) => prev + score);
+    int iiefTotalScore = iiefScores.fold(0, (prev, score) => prev + score);
+    int totalScore = ehsTotalScore + iiefTotalScore;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NextScreen(testScore: totalScore),
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -43,11 +62,19 @@ class _TestScreenState extends State<TestScreen> {
             children: [
               ButtonSet(
                 testData: testData,
-                onButtonPress: (score) {
+                onButtonPress: (int score, String type, int index) {
                   setState(() {
-                    testScore += score;
+                    if (type == 'EHS') {
+                      ehsScores[index] = score;
+                    } else if (type == 'IIEF5') {
+                      iiefScores[index] = score;
+                    }
                   });
                 },
+              ),
+              ElevatedButton(
+                onPressed: calculateTotalScore,
+                child: const Text("Submit"),
               ),
             ],
           ),
@@ -59,9 +86,13 @@ class _TestScreenState extends State<TestScreen> {
 
 class ButtonSet extends StatelessWidget {
   final Map<String, dynamic>? testData;
-  final Function(int) onButtonPress;
+  final Function(int, String, int) onButtonPress;
 
-  const ButtonSet({super.key, required this.testData, required this.onButtonPress});
+  const ButtonSet({
+    super.key,
+    required this.testData,
+    required this.onButtonPress,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +109,8 @@ class ButtonSet extends StatelessWidget {
           ButtonWithState(
             buttonText: value.toString(),
             question: 'EHS',
-            onPressed: () {
-              onButtonPress(int.parse(key));
+            onPressed: (score) {
+              onButtonPress(score, 'EHS', int.parse(key));
             },
           ),
         );
@@ -92,8 +123,8 @@ class ButtonSet extends StatelessWidget {
           ButtonGroup(
             question: value.toString(),
             answers: iief5Answers,
-            onPressed: (score) {
-              onButtonPress(score);
+            onPressed: (score, int index) {
+              onButtonPress(score, 'IIEF5', index);
             },
           ),
         );
@@ -120,7 +151,7 @@ class ButtonSet extends StatelessWidget {
 class ButtonWithState extends StatefulWidget {
   final String buttonText;
   final String question;
-  final VoidCallback onPressed;
+  final Function(int) onPressed;
 
   const ButtonWithState({super.key, required this.buttonText, required this.question, required this.onPressed});
 
@@ -138,7 +169,7 @@ class _ButtonWithStateState extends State<ButtonWithState> {
         setState(() {
           isClicked = !isClicked;
         });
-        widget.onPressed();
+        widget.onPressed(isClicked ? 0 : 1);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: isClicked ? Colors.green : Colors.blue[900],
@@ -163,9 +194,14 @@ class _ButtonWithStateState extends State<ButtonWithState> {
 class ButtonGroup extends StatelessWidget {
   final String question;
   final Map<String, dynamic>? answers;
-  final Function(int) onPressed;
+  final Function(int, int) onPressed;
 
-  const ButtonGroup({super.key, required this.question, required this.answers, required this.onPressed});
+  const ButtonGroup({
+    super.key,
+    required this.question,
+    required this.answers,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -177,8 +213,8 @@ class ButtonGroup extends StatelessWidget {
           ButtonWithState(
             buttonText: value.toString(),
             question: question,
-            onPressed: () {
-              onPressed(int.parse(key));
+            onPressed: (score) {
+              onPressed(score, int.parse(key));
             },
           ),
         );
@@ -207,3 +243,4 @@ class ButtonGroup extends StatelessWidget {
     );
   }
 }
+

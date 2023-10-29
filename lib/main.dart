@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:penisure/components/bottom_navigation.dart';
 import 'package:penisure/pages/NotFound.dart';
 import 'package:penisure/pages/facts.dart';
 import 'package:penisure/pages/home.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       home: const SplashScreen(),
       initialRoute: '/',
       routes: {
+        '/navscreen': (context) => const BottomNavigation(),
         '/home': (context) => const HomeScreen(),
         '/test-center': (context) => TestScreen(),
         '/location': (context) => const LocationPage(),
