@@ -76,4 +76,8 @@ Penisure is an open-source project, and we welcome contributions from developers
 We are dedicated to helping you take control of your sexual health and well-being. Download Penisure today and start your journey to a healthier, more informed you.
 
 ## WARRANTY DISCLAIMER. LIMITATION OF LIABILITY
-Penisure comes with absolutely 0 warranty and should not be used to make ANY MEDICAL DIAGNOSIS. Penisure is not responsible for any damages or injuries caused by the use of this app. Please always consult a medical professional for any medical advice.
+Penisure is designed to provide information and offer a preliminary screening for erectile dysfunction (ED) based on user-provided data. While we work diligently to maintain the accuracy of our information and screening tool, it is crucial to understand that Penisure should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+
+Erectile dysfunction can be caused by a variety of factors, including underlying health conditions, medications, and psychological factors. The results obtained from the screening tool are intended to provide general guidance and raise awareness but should not be considered a definitive diagnosis.
+
+If you have concerns about your sexual health or receive a high-risk result from the screening tool, we strongly recommend consulting a healthcare professional for a thorough evaluation and personalized advice. Please note that, despite our efforts, there may be bugs or inaccuracies in the app, and nothing can replace the expertise of a qualified medical practitioner when it comes to diagnosing and treating medical conditions.
