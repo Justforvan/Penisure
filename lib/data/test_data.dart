@@ -25,12 +25,14 @@ class Welcome {
 }
 
 class Ehs {
+  final String ans0;
   final String ans1;
   final String ans2;
   final String ans3;
   final String ans4;
 
   Ehs({
+    required this.ans0,
     required this.ans1,
     required this.ans2,
     required this.ans3,
@@ -42,6 +44,7 @@ class Ehs {
   String toRawJson() => json.encode(toJson());
 
   factory Ehs.fromJson(Map<String, dynamic> json) => Ehs(
+    ans0: json["ans0"],
     ans1: json["ans1"],
     ans2: json["ans2"],
     ans3: json["ans3"],
@@ -49,6 +52,7 @@ class Ehs {
   );
 
   Map<String, dynamic> toJson() => {
+    "ans0": ans0,
     "ans1": ans1,
     "ans2": ans2,
     "ans3": ans3,
