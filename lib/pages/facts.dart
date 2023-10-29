@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:penisure/components/bottom_navigation.dart';
 import 'package:penisure/data/faq_data.dart';
 
 class AccordionWidget extends StatefulWidget {
@@ -117,8 +119,11 @@ class _FaQPageState extends State<FaQPage> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.green[900],
+          backgroundColor: Colors.blue[900],
           title: const Text('Facts about your penis'),
+          actions: [
+            Icon(MdiIcons.searchWeb)
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(

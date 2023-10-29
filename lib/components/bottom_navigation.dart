@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:penisure/pages/facts.dart';
+import 'package:penisure/pages/home.dart';
+import 'package:penisure/pages/location.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -19,9 +21,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return SafeArea(
         child: Scaffold(
             body: <Widget>[
-              const Center(child: Text('Pengeluaran')),
+              const HomeScreen(),
               const FaQPage(),
-              const Center(child: Text('Lokasi'))
+              const LocationPage()
             ][_selectedIndex],
             bottomNavigationBar: NavigationBar(
               labelBehavior: destinationLabelBehavior,

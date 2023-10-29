@@ -1,0 +1,25 @@
+{
+  "ehs": {
+    "ans1": "penis does not enlarge",
+    "ans2": "Penis is hard but not firm enough for penetration",
+    "ans3": "Penis is firm enough for penetration but not completely rigid",
+    "ans4": "Penis is completely firm and fully rigid."
+  },
+  "IIEF5": {
+    "questions": {
+      "q1": "How confident are you that you can get and maintain an erection?",
+      "q2": "When you had erections with sexual stimulation, how often were your erections hard enough for penetration (entering your partner)?",
+      "q3": "During sexual intercourse, how often were you able to maintain your erection after you had penetrated (entered) your partner?",
+      "q4": "During sexual intercourse, how difficult was it to maintain your erection to completion of intercourse?",
+      "q5": "When you attempted sexual intercourse, how often was it satisfactory for you?"
+    },
+    "answers": {
+      "point0": "No or low",
+      "point1": "Almost never",
+      "point2": "A few times",
+      "point3": "About half the times",
+      "point4": "Most times (more than half)",
+      "point5": "Almost always or always"
+    }
+  }
+}
